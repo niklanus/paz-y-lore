@@ -34,6 +34,24 @@ a, button {
 	-ms-touch-action: manipulation;
 }
 
+a[href^="tel"]{
+    color:inherit;
+    text-decoration:none;
+}
+
+p {
+	line-height: 1.1em;
+}
+
+h2 {
+	font-weight: normal;
+	color: $magenta;
+	font-size: 2.5em;
+	margin: 0;
+	padding: 50px 0;
+	line-height: 1em;
+}
+
 .embed-container {
 	position: relative;
 	padding-bottom: 56.25%;
@@ -72,10 +90,32 @@ a, button {
 	&--small {
 		max-width: 760px;
 	}
+
+	&--xsmall {
+		max-width: 560px;
+	}
 }
 
 .main {
-	background: #f2d6b1;
+	background: #f2d6b1 url(../img/bg-1.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	padding-bottom: 50px;
+
+	&__link {
+		text-align: center;
+		font-size: 1.4em;
+		color: $magenta;
+		text-align: center;
+		padding-top: 50px;
+
+		a {
+			@include hover-medium;
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
 }
 
 .nav {
@@ -191,6 +231,222 @@ a, button {
 
 		&:last-child {
 			align-self: flex-end;
+		}
+	}
+}
+
+
+
+// ENTÉRATE
+
+
+.enterate {
+	background: #c0cdd7 url(../img/bg-2.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	@extend .cf;
+	padding-bottom: 60px;
+
+	&__info {
+		float: left;
+		width: 50%;
+		font-size: 1.65em;
+		color: #787878;
+		padding-left: 180px;
+
+		small {
+			line-height: 18px;
+		}
+
+		&__date {
+			font-size: 1.25em;
+		}
+
+		&__remember {
+			font-size: 0.75em;
+		}
+
+		&__link {
+			font-size: 0.75em;
+			color: #0099ff;
+			padding-left: 35px;
+		}
+
+		p {
+			max-width: 300px;
+		}
+	}
+
+	&__map {
+		width: 50%;
+		float: left;
+		padding-left: 50px;
+		position: relative;
+
+		a {
+			display: block;
+		}
+
+		img {
+			display: block;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+	}
+
+	@media only screen and (max-width: 1200px) {
+		&__info {
+			width: 35%;
+			padding-left: 0;
+		}
+
+		&__map {
+			width: 65%;
+
+			img {
+				max-width: 100%;
+				height: auto;
+				position: relative;
+				left: auto;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		&__info {
+			width: 100%;
+			float: none;
+			display: block;
+
+			&__link {
+				padding: 0;
+			}
+		}
+
+		&__map {
+			width: 100%;
+			float: none;
+			display: block;
+			padding: 50px 0 0 0;
+
+			img {
+				left: auto;
+				top: auto;
+			}
+		}
+	}
+}
+
+
+
+// MEETING POINT
+
+
+.meeting {
+	background: #f2d6b1 url(../img/bg-3.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	@extend .cf;
+	padding-bottom: 60px;
+
+	p {
+		color: #669999;
+		font-size: 1.65em;
+
+		strong {
+			color: $magenta;
+			font-weight: normal;
+			font-size: 1.3em;
+		}
+
+		span {
+			color: $magenta;
+		}
+	}
+
+	&__emoji {
+		font-family: Helvetica, 'Arial', sans-serif;
+		font-size: 90px !important;
+		color: $magenta !important;
+		margin-top: 30px;
+	}
+}
+
+
+
+
+// HONEY MOON
+
+
+.honeymoon {
+	background: #f2d6b1 url(../img/bg-4.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	@extend .cf;
+	padding-bottom: 60px;
+
+	&__text {
+		color: white;
+		font-size: 1.65em;
+		text-align: center;
+
+		p {
+			margin-top: 0;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			position: relative;
+			top: -30px;
+		}
+
+		@media only screen and (max-width: 768px) {
+			text-align: left;
+
+			br {
+				display: none;
+			}
+
+			img {
+				top: auto;
+			}
+		}
+	}
+
+	&__emoji {
+		font-family: Helvetica, 'Arial', sans-serif;
+		font-size: 90px !important;
+		color: $magenta !important;
+		margin-top: 30px;
+	}
+
+	&__bank {
+		font-size: 1.6em;
+		float: left;
+		color: white !important;
+		text-align: center;
+
+		@media only screen and (max-width: 768px) {
+			float: none;
+		}
+	}
+
+	.container--main {
+		position: relative;
+	}
+
+	&__logo {
+		width: 180px;
+		height: auto;
+		position: absolute;
+		right: 50px;
+		bottom: 0;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			right: auto;
+			bottom: auto;
+			margin: 0 auto;
+			display: block;
 		}
 	}
 }
