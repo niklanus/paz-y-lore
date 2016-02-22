@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+//  _   _ _ _      ____  _                       _       _       
+// | \ | (_| |    |  _ \| |                     (_)     | |      
+// |  \| |_| | __ | |_) | |_   _  ___ _ __  _ __ _ _ __ | |_ ___ 
+// | . ` | | |/ / |  _ <| | | | |/ _ | '_ \| '__| | '_ \| __/ __|
+// | |\  | |   <  | |_) | | |_| |  __| |_) | |  | | | | | |_\__ \
+// |_| \_|_|_|\_\ |____/|_|\__,_|\___| .__/|_|  |_|_| |_|\__|___/
+//                                   | |
+//                                   |_|               14/05/2015
+
+/* SETUP */
+@import 'components/variables-mixins';
+@import 'components/normalize';
+@import 'components/grid';
+@import 'components/themify-icons';
+@import 'components/utilities';
+
+/* PLUGINS */
+@import 'components/slick';
+@import 'components/featherlight';
+
+/* WEBSITE CSS */
+@import 'components/main';
+
+$magenta: #ff6699;
+
+body {
+	font-family: 'Covered By Your Grace', cursive;
+}
+
+a, button {
+	touch-action: manipulation;
+	-ms-touch-action: manipulation;
+}
+
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	@extend .cf;
+	margin: 0 auto;
+
+	&--main {
+		max-width: 1140px;
+		padding: 0 50px;
+
+		@media only screen and (max-width: 768px) {
+			padding: 0 30px;
+		}
+
+		@media only screen and (max-width: 400px) {
+			padding: 0 20px;
+		}
+	}
+
+	&--small {
+		max-width: 760px;
+	}
+}
+
+.main {
+	background: #f2d6b1;
+}
+
+.nav {
+	position: relative;
+	margin-bottom: 100px;
+
+	&__logo {
+		width: 238px;
+		height: auto;
+		position: absolute;
+	}
+
+	&__items {
+		text-align: center;
+		list-style: none;
+
+		li {
+			display: inline-block;
+		}
+
+		a {
+			display: block;
+			font-size: 1.75em;
+			color: white;
+			padding: 20px;
+			@include hover-medium;
+
+			&:hover {
+				color: $magenta;
+			}
+		}
+
+		@media only screen and (max-width: 1100px) {
+			text-align: right;
+		}
+	}
+
+	&__trigger {
+		font-size: 1.5em;
+		display: none;
+		padding: 35px 30px 10px 30px;
+		position: relative;
+		right: -30px;
+
+		button {
+			padding: 0;
+			background: none;
+			outline: 0;
+			border: 0;
+		}
+	}
+
+	@media only screen and (max-width: 880px) {
+		margin-bottom: 75px;
+
+		&__items a {
+			font-size: 1.5em;
+		}
+
+		&__logo {
+			width: 180px;
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		margin-bottom: 50px;
+
+		&__items {
+			display: none;
+		}
+
+		&__trigger {
+			display: block;
+			text-align: right;
+		}
+
+		&__logo {
+			padding-top: 15px;
+		}
+	}
+}
+
+.mnav {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: 10;
+	background: $magenta;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transform: translateX(100%);
+	@include easeOutQuart;
+
+	&.is-opened {
+		transform: translateX(0);
+	}
+
+	a {
+		display: block;
+		flex: 1;
+		text-align: center;
+		color: white;
+		font-size: 2.25em;
+		padding: 20px 10px;
+
+		&:first-child {
+			align-self: flex-start;
+		}
+
+		&:last-child {
+			align-self: flex-end;
+		}
+	}
+}

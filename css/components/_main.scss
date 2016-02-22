@@ -1,0 +1,30 @@
+html {
+	height: 100%;
+	font-size: 100%;
+	overflow-x: hidden;
+}
+body {
+	min-height: 100%;
+	font-size: 18px;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	color: $darkgray;
+	background: white;
+	position: relative;
+	overflow-x: hidden;
+}
+p {
+	line-height: 1.35em;
+}
+a {
+	color: $gray;
+	text-decoration: none;
+}
+/*
+::selection {
+	background: rgba(44,62,102,0.75);
+	color: white;
+}
+::-moz-selection {
+	background: rgba(44,62,102,0.75);
+	color: white;
+}*/
